@@ -17,7 +17,7 @@
 Exécutez ces commandes dans votre terminal :
 
 ```bash
-git remote add origin https://github.com/VOTRE_USERNAME/houssam-nassih-portfolio.git
+git remote add origin https://github.com/NassihHoussam/houssam-nassih-portfolio.git
 git branch -M main
 git push -u origin main
 ```
@@ -25,12 +25,12 @@ git push -u origin main
 ## Étape 4 : Attendre le déploiement
 1. GitHub va automatiquement déployer votre site (2-3 minutes)
 2. Allez dans "Settings" → "Pages" pour voir l'URL
-3. Votre portfolio sera disponible à : `https://VOTRE_USERNAME.github.io/houssam-nassih-portfolio/`
+3. Votre portfolio sera disponible à : `https://NassihHoussam.github.io/houssam-nassih-portfolio/`
 
 ## Étape 5 : Partager votre lien !
 Utilisez ce lien sur LinkedIn :
 ```
-https://VOTRE_USERNAME.github.io/houssam-nassih-portfolio/
+https://NassihHoussam.github.io/houssam-nassih-portfolio/
 ```
 
-Remplacez `VOTRE_USERNAME` par votre nom d'utilisateur GitHub.
+Remplacez `NassihHoussam` par votre nom d'utilisateur GitHub.
