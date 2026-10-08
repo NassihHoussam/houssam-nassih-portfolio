@@ -1,6 +1,6 @@
 # Portfolio Houssam Nassih
 
-Un portfolio moderne et professionnel présentant le parcours et les projets de Houssam Nassih, étudiant en ingénierie des réseaux et IT.
+Un portfolio moderne et professionnel présentant le parcours et les projets de Houssam Nassih, étudiant en ingénierie IA & Data.
 
 ## 🚀 Fonctionnalités
 
