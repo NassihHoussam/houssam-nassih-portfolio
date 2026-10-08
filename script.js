@@ -167,8 +167,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     submitBtn.disabled = false;
                     submitBtn.textContent = 'Envoyer le message';
                 }
-                showNotification('Message envoyé avec succès !', 'success');
-                contactForm.reset();
+                if (result.success === "true" || result.success === true) {
+                    showNotification('Message envoyé avec succès !', 'success');
+                    contactForm.reset();
+                } else if (result.message && result.message.includes("Activation")) {
+                    showNotification('Activation requise : vérifiez votre boîte mail (et Spams) !', 'info');
+                    contactForm.reset();
+                } else {
+                    showNotification('Message envoyé avec succès !', 'success');
+                    contactForm.reset();
+                }
             })
             .catch(error => {
                 if (submitBtn) {
