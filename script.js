@@ -140,15 +140,43 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Send email using mailto
-            const subject = encodeURIComponent(data.subject);
-            const body = encodeURIComponent(`Nom: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`);
-            const mailtoLink = `mailto:nassihhoussam073@gmail.com?subject=${subject}&body=${body}`;
+            const submitBtn = document.getElementById('submitBtn');
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Envoi en cours...';
+            }
             
-            // Open email client
-            window.location.href = mailtoLink;
+            showNotification('Envoi du message en cours...', 'info');
             
-            showNotification('Votre client email s\'ouvre pour envoyer le message', 'success');
+            fetch('https://formsubmit.co/ajax/nassihhoussam073@gmail.com', {
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: data.name,
+                    email: data.email,
+                    subject: data.subject,
+                    message: data.message
+                })
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Envoyer le message';
+                }
+                showNotification('Message envoyé avec succès !', 'success');
+                contactForm.reset();
+            })
+            .catch(error => {
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Envoyer le message';
+                }
+                showNotification('Une erreur est survenue lors de l\'envoi.', 'error');
+            });
         });
     }
 
